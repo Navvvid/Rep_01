@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script>
+		$( document ).ready(function() {
+    		$("button").click(function(){
+				$.ajax({
+					url:'test.php',
+					type:'post',
+					data:{name:'alireza',id:'5'}
+				})
+				.done(function(resp){
+					$(".result").html(resp);
+				})
+			})
+		});
+	</script>
+	<style type="text/css">
+		.result{
+			width: 600px;
+			height: 500px;
+			border: solid 1px gray;
+			margin: 0 auto;
+		}		
+	</style>
+</head>
+<body>
+	<button>Test Ajax</button>
+	<div class="result">
+		
+	</div>
+</body>
+</html>
